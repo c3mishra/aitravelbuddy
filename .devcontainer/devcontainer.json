@@ -1,0 +1,10 @@
+{
+  "name": "MongoDB Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+  },
+  "postCreateCommand": "docker-compose up -d",
+  "forwardPorts": [27017],
+  "remoteUser": "node"
+}
