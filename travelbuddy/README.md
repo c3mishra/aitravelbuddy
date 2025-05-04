@@ -93,8 +93,8 @@ npm run dev
 - `PUT /api/comments/:id`: Update a comment
 - `DELETE /api/comments/:id`: Delete a comment
 
-To run mongodb in codespace use below - 
-docker-compose up -d
+# To run mongodb in codespace use below - 
+# docker-compose up -d
 
 ## License
 MIT 
