@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from "react-router-dom";
 import { 
   itineraryApi,
   Itinerary,
@@ -35,7 +36,7 @@ import {
 } from '@/components/ui/card';
 import FadeIn from '@/components/animation/FadeIn';
 
-const Itineraries = () => {
+const Itineraries = ({ isSearchPage = false }: { isSearchPage?: boolean }) => {
   const [itineraries, setItineraries] = useState<Itinerary[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -61,6 +62,17 @@ const Itineraries = () => {
     selectedExperienceType
   ].filter(Boolean).length;
 
+  const [searchParams] = useSearchParams();
+  const experienceTypeFromQuery = isSearchPage ? searchParams.get("experienceType") : null;
+
+  // Set experience type from query on mount (only once)
+  useEffect(() => {
+    if (isSearchPage && experienceTypeFromQuery) {
+      setSelectedExperienceType(experienceTypeFromQuery);
+    }
+    // eslint-disable-next-line
+  }, [isSearchPage, experienceTypeFromQuery]);
+
   // Fetch itineraries when component mounts or when filters change
   useEffect(() => {
     const fetchItineraries = async () => {
@@ -71,7 +83,9 @@ const Itineraries = () => {
         const filters: ItineraryFilters = {};
         if (selectedLocation) filters.location = selectedLocation;
         if (selectedTripLength) filters.tripLength = selectedTripLength;
-        if (selectedExperienceType) filters.experienceType = selectedExperienceType;
+        if (selectedExperienceType) {
+          filters.experienceType = selectedExperienceType;
+        }
         
         // Fetch itineraries from API
         const data = await itineraryApi.getAll(filters);

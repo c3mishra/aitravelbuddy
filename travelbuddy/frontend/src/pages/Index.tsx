@@ -149,7 +149,7 @@ const Index = () => {
                   Create Itinerary
                 </Button>
               </Link>
-              <Link to="/explore">
+              <Link to="/itineraries">
                 <Button variant="outline" size="lg" className="rounded-full bg-transparent text-white border-white hover:bg-white/10">
                   Explore Itineraries
                 </Button>
