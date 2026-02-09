@@ -96,5 +96,17 @@ npm run dev
 # To run mongodb in codespace use below - 
 # docker-compose up -d
 
+## UI Screenshots
+<img width="2392" height="1358" alt="image" src="https://github.com/user-attachments/assets/42fb895a-73fa-4d86-b53b-8507f5aeed37" />
+
+<img width="2397" height="1354" alt="image" src="https://github.com/user-attachments/assets/9956d08a-017e-407c-815e-d1bc510398a0" />
+
+<img width="2387" height="1034" alt="image" src="https://github.com/user-attachments/assets/cf7e338d-0343-4ee6-8f57-6f6a06674d3a" />
+
+<img width="2394" height="1355" alt="image" src="https://github.com/user-attachments/assets/b533be41-1ebe-4114-8cf1-7ea63a6ce104" />
+
+<img width="2392" height="1358" alt="image" src="https://github.com/user-attachments/assets/8c691352-c2d6-4942-803b-1bb4615f209e" />
+
 ## License
+
 MIT 
